@@ -27,9 +27,9 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({
   }, [data.id, router]);
 
   const lastMessage = useMemo(() => {
-    const message = data.message || [];
+    const message = data.messages || [];
     return message[message.length - 1];
-  }, [data.message]);
+  }, [data.messages]);
 
   const userEmail = useMemo(() => {
     return session.data?.user?.email;
